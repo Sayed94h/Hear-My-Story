@@ -2,11 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const mongoose = require('./db/mongoose');
 
 const app = express();
-
-const secret = 'mysecretsshhh';
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
