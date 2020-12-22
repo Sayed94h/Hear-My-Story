@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+const { MONGO_CONNECTION_URI } = require('./config.js');
 
-const mongo_uri = 'mongodb://localhost/hyf';
-mongoose.connect(mongo_uri, { useNewUrlParser: true }, function(err) {
+const mongoUri = MONGO_CONNECTION_URI;
+mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
   if (err) {
     throw err;
   } else {
-    console.log(`Successfully connected to ${mongo_uri}`);
+    console.log(`Successfully connected to ${mongoUri}`);
   }
 });
 
