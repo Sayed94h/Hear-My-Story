@@ -6,6 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const api = require('./api/server');
+require('./api/db/mongoose')
 
 const app = express();
 app.use(cors());
