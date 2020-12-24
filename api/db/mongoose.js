@@ -1,13 +1,17 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
-const { MONGO_CONNECTION_URI } = require('./config.js');
+const seedUsers = require('../scripts/seed')
 
-const mongoUri = MONGO_CONNECTION_URI;
-mongoose.connect(mongoUri, { useNewUrlParser: true }, function(err) {
-  if (err) {
-    throw err;
-  } else {
-    console.log(`Successfully connected to ${mongoUri}`);
-  }
-});
+const uri = process.env.DB_URI
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+seedUsers();
+const db = mongoose.connection
 
-module.export = mongoose;
+db.on('error', (err) => {
+    console.log(err)
+})
+
+
+db.once('open', () => {
+    console.log('Database Connection Established!')
+})
