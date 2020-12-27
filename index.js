@@ -6,6 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const api = require('./api/server');
+require('./api/db/mongoose')
 
 const app = express();
 app.use(cors());
@@ -16,10 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', express.static(__dirname + '/client/build/'))
+app.use('/', express.static(__dirname + '/client/public'))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/build/index.html');
+  res.sendFile(__dirname + '/client/public/index.html');
 });
 
 app.use('/api', api);

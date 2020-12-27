@@ -1,36 +1,21 @@
-const { cryptPassword } = require('../utils/encryption');
-const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../db/db.js');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-class User extends Model {
-    constructor({ email, password }) {
-      super();
-      this.email = email;
-      this.password = password;
-    }
+ const userSchema = new Schema({
+     name: {
+         type: String,
+         required: true
+     },
+     email: {
+         type: String,
+         required: true
+     },
+     password: {
+         type: String,
+         required: true
+     }
+ },{timestamps: true})
 
-    validPassword(password) {
-        return bcrypt.compare(password, this.password);
-    }
-}
+ const User = mongoose.model('User', userSchema)
 
-User.init({
-  email: DataTypes.STRING,
-  password: DataTypes.STRING,
-}, {
-  sequelize,
-  modelName: 'user'
-});
-
-User.beforeCreate((user, options) => {
-    return cryptPassword(user.password)
-        .then(success => {
-            user.password = success;
-        })
-        .catch(err => {
-            if (err) console.log(err);
-        });
-});
-
-
-module.exports = User;
+ module.exports = User;
