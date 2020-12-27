@@ -1,0 +1,24 @@
+nav.Navigation {
+
+}
+
+nav.Navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav.Navigation ul li {
+    padding: 0 1em;
+}
+
+nav.Navigation ul li a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.5em;
+}
+
+nav.Navigation ul li a:hover {
+    text-decoration: underline;
+}
