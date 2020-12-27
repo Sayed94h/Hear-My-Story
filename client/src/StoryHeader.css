@@ -1,0 +1,8 @@
+header.StoryHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+header.StoryHeader p {
+    margin: 0;
+}

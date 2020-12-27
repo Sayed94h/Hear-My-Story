@@ -1,0 +1,6 @@
+h2.EyeCatcher {
+    color: var(--orange);
+    font-size: 6em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
