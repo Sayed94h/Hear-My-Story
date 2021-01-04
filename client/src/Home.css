@@ -1,0 +1,13 @@
+main.Home {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+main.Home .EyeCatcher {
+    flex: 2;
+}
+
+main.Home .Gallery {
+    flex: 3;
+}
