@@ -1,17 +1,14 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const confiq = require('../config/config').get(process.env.NODE_ENV);
+const config = require('../config');
 const salt = 10;
 
 const userSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
-       
-
     },
-
     email: {
         type: String,
         required: true,
@@ -61,7 +58,7 @@ userSchema.methods.comparepassword = function(password, cb) {
 
 userSchema.methods.generateToken = function(cb) {
     var user = this;
-    var token = jwt.sign(user._id.toHexString(), confiq.SECRET);
+    var token = jwt.sign(user._id.toHexString(), config.SECRET);
 
     user.token = token;
     user.save(function(err, user) {
@@ -74,7 +71,7 @@ userSchema.methods.generateToken = function(cb) {
 userSchema.statics.findByToken = function(token, cb) {
     var user = this;
 
-    jwt.verify(token, confiq.SECRET, function(err, decode) {
+    jwt.verify(token, config.SECRET, function(err, decode) {
         user.findOne({ "_id": decode, "token": token }, function(err, user) {
             if (err) return cb(err);
             cb(null, user);
