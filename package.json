@@ -1,5 +1,5 @@
 {
-  "name": "cooool",
+  "name": "hear-my-story",
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run dev-api\" \"npm run dev-client\"",
@@ -23,6 +23,9 @@
     "mongoose": "^5.11.8",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
