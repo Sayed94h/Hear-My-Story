@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const User = require('../models/user');
+const User = require('../models/User');
 const { auth } = require('../middleware');
 const path = require('path');
 
@@ -61,7 +61,7 @@ app.post('/login', function(req, res) {
         User.findOne({ 'email': req.body.email }, function(err, user) {
             if (!user) return res.json({ isAuth: false, message: ' Auth failed ,email not found' });
 
-            user.comparepassword(req.body.password, (err, isMatch) => {
+            user.compare(req.body.password, (err, isMatch) => {
                 if (!isMatch) return res.json({ isAuth: false, message: "password doesn't match" });
 
                 user.generateToken((err, user) => {
