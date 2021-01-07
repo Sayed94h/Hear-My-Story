@@ -1,0 +1,12 @@
+section.Gallery {
+	background: url("./children.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: 4em;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

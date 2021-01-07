@@ -1,0 +1,34 @@
+footer.StoryFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer.StoryFooter p {
+    margin: 0;
+}
+footer.StoryFooter a {
+    color: var(--black);
+}
+
+footer.StoryFooter .StoryFooter-Reactions {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer.StoryFooter .StoryFooter-Reactions p {
+    margin: 0 0.5em 0 0;
+}
+
+footer.StoryFooter .StoryFooter-Reactions figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer.StoryFooter .StoryFooter-Reactions figure img {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+}
+
