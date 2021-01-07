@@ -4,7 +4,10 @@ const User = require('../models/User')
 
 module.exports.createStory =  async (req, res, next) => {
     
-    if(!req.body.story) return res.status(400).send('No text provided');
+    if(!req.body.story) return res.status(400).json({
+        error: true,
+        message: "No text provided"
+    });
     const story = new Story(req.body);
     let token = req.cookies.auth;
     
@@ -27,4 +30,4 @@ module.exports.createStory =  async (req, res, next) => {
     
 }
 
-
+    
