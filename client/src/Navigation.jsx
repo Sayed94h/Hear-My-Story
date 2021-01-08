@@ -8,7 +8,7 @@ export default class Navigation extends Component {
       <nav className="Navigation">
         <ul>
           <li><Link to="/">Stories</Link></li>
-          <li><Link to="/login">My Profile</Link></li>
+          <li><Link to="/registration">My Profile</Link></li>
           <li><Link to="/">About</Link></li>
         </ul>
       </nav>
