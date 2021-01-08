@@ -1,25 +1,18 @@
-const jwt = require('jsonwebtoken');
-const { JWT_SECRET } = require('./config.js');
+const User = require('./models/user');
 
-const withAuth = function(req, res, next) {
-  const token = 
-      req.body.token ||
-      req.query.token ||
-      req.headers['x-access-token'] ||
-      req.cookies.token;
+let auth = (req, res, next) => {
+    let token = req.cookies.auth;
+    User.findByToken(token, (err, user) => {
+        if (err) throw err;
+        if (!user) return res.json({
+            error: true
+        });
 
-  if (!token) {
-    res.status(401).send('Unauthorized: No token provided');
-  } else {
-    jwt.verify(token, JWT_SECRET, function(err, decoded) {
-      if (err) {
-        res.status(401).send('Unauthorized: Invalid token');
-      } else {
-        req.email = decoded.email;
+        req.token = token;
+        req.user = user;
         next();
-      }
-    });
-  }
+
+    })
 }
 
-module.exports = withAuth;
+module.exports = { auth };
