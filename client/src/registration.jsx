@@ -41,7 +41,7 @@ export default class registration extends Component {
         </div>
         
         <p></p>
-        <p>Already have an account? <Link to="/signIn">Sign In</Link></p>
+        <p>Already have an account? <Link to="/signin">Sign In</Link></p>
       </div>
     );
   }

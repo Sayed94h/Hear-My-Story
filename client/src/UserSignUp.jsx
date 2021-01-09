@@ -54,5 +54,6 @@ export default function App() {
 
       <button>Sign Up</button>
     </form>
+    
   );
 }

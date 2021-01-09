@@ -17,9 +17,11 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/secret" component={withAuth(Secret)} />
           <Route path="/registration" component={Registration} />
-          <route path="/UserSignIn" component={SignIn} />
-          <Route exact path='/signin' render={(history) => <SignIn />} />
+          <Route path="/UserSignIn" component={SignIn} />
+          <Route path="/UserSignUp" component={SignUp} />
           <Route exact path='/signup' render={(history) => <SignUp />} />
+          <Route exact path='/signin' render={(history) => <SignIn />} />
+          
         </Switch>
       </div>
     );

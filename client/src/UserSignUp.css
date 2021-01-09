@@ -20,9 +20,9 @@ label {
   }
   
   button {
-    min-width: 37%;
+    min-width: 20%;
     cursor: pointer;
-    margin-left: 800px;
+    margin-left: 950px;
     margin-top: 0.5em;
     padding: 	0.938em;
     border: none;
