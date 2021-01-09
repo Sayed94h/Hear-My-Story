@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import Googlesignup from "./googlesignup";
+
 
 import './registration.css';
 
@@ -29,12 +29,20 @@ export default class registration extends Component {
         <div className="soustitle">
           <p>Create a profile to share your Story.<br></br> Share your story so others can hear it.</p>
         </div>
-        <div className="Googlesignup">
-          <Googlesignup />
+        <login />
+
+
+
+
+
+
+
+
+        <div className="signupbutton">
+          <button> Sign Up with Google</button>
+          <p></p>
+          <button> Sign Up with Facebook</button>
         </div>
-          
-        <p></p>
-        <Link className="FaceBooksignup" to="/signin">Sign Up with Facebook</Link>
         <p></p>
         <div>
           <Link className="emailsignup" to ="/signup">Sign up with an email</Link>

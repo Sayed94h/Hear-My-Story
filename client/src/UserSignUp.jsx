@@ -14,7 +14,7 @@ export default function App() {
       Name: ${name}
       Password: ${password}
     `);
-    
+
     event.preventDefault();
   }
 
@@ -41,7 +41,7 @@ export default function App() {
           onChange={e => setName(e.target.value)}
           required />
       </label>
-      
+
       <label>
         Password
         <input
@@ -54,6 +54,6 @@ export default function App() {
 
       <button>Sign Up</button>
     </form>
-    
+
   );
-}
+} 

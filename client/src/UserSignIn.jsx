@@ -20,7 +20,7 @@ export default class UserSignIn extends Component {
     });
   }
 
- 
+
   generateFormInput = (inputName, type, placeholder) => {
     return (
       <div>
@@ -44,7 +44,7 @@ export default class UserSignIn extends Component {
           }}>
             {this.generateFormInput("email", "text", "Email Address")}
             {this.generateFormInput("password", "password", "Password")}
-            <button className="button" type="submit">Sign In</button>
+            <button className="button" type="submit">Log In</button>
           </form>
         </div>
         <p>&nbsp;</p>
@@ -54,4 +54,3 @@ export default class UserSignIn extends Component {
     )  
   }
 }
-

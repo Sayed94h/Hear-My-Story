@@ -1,10 +1,9 @@
-
 label {
     margin-left: 800px;
     color: #444;
     font-weight: lighter;
   }
-  
+
   input {
     display: flex;
     flex-direction: column;
@@ -18,7 +17,7 @@ label {
     border: 1px solid #d6d1d5;
     margin-top: 5px;
   }
-  
+
   button {
     min-width: 20%;
     cursor: pointer;
@@ -30,13 +29,13 @@ label {
     background-color: #1E3231;
     color: #fefefe;
   }
-  
+
   .error {
     color:#db2269;
     font-size: 0.5em;
     display: relative;
   }
-  
+
   .submit {
     width: 100%;
     display: flex;
@@ -50,4 +49,3 @@ h1.title {
     text-align: center;
     text-transform: capitalize;
 }
-
