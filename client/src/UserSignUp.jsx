@@ -1,47 +1,58 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import './UserSignUp.css';
 
 
-export default class UserSignUp extends Component {
+export default function App() {
+  const [email, setEmail] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      signIn: null,
-      email: '',
-      name:'',
-      password: '',
-    }
+  const handleSubmit = (event) => {
+    console.log(`
+      Email: ${email}
+      Name: ${name}
+      Password: ${password}
+    `);
+    
+    event.preventDefault();
   }
 
-  //function to set state if a form field is changed
-  handleChange = (e, state) => {
-    this.setState({
-      [state]: e.target.value
-    });
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1 className="title">Get Started With Your account</h1>
 
-  render() {
-    return (
-      <div> 
-        <h1>Get Started With Your Account</h1>
-        <form onSubmit ={this.handleInputChange}>
-            <label>
-                <p>Email</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <label>
-                <p>name</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <label>
-                <p>Password</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <p></p>
-            <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    );
-  }
+      <label>
+        Email
+        <input
+          name="email"
+          type="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          required />
+      </label>
+
+      <label>
+        name
+        <input
+          name="name"
+          type="name"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          required />
+      </label>
+      
+      <label>
+        Password
+        <input
+          name="password"
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          required />
+      </label>
+
+      <button>Sign Up</button>
+    </form>
+  );
 }

@@ -35,7 +35,7 @@ export default class UserSignUp extends Component {
         <p></p>
         <input type="submit" value="Log In" />
       </form>
-          
+       <p>Don't have a profile? <Link to="/signup">Sign Up</Link> </p>   
       </div>
       
     );
