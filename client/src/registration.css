@@ -1,0 +1,11 @@
+h1.title {
+    color: var(--orange);
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+div.soustitle p {
+    text-align: center;
+    font-weight: bold;
+}

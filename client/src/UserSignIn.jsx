@@ -6,42 +6,38 @@ export default class UserSignUp extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      signIn: null,
-      email: '',
-      name:'',
-      password: '',
-    }
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //function to set state if a form field is changed
-  handleChange = (e, state) => {
-    this.setState({
-      [state]: e.target.value
-    });
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
   }
 
   render() {
     return (
-      <div> 
-        <h1>Get Started With Your Account</h1>
-        <form onSubmit ={this.handleInputChange}>
-            <label>
-                <p>Email</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <label>
-                <p>name</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <label>
-                <p>Password</p>
-                <input type="text" value={this.state.value} onChange={this.handleInputChange} />
-            </label>
-            <p></p>
-            <button type="submit">Sign Up</button>
-        </form>
+      <div>
+        <h1 className="title">Welcome Back</h1>
+        <form className="formsub" onSubmit={this.handleSubmit}>
+        <label>
+          <p>Email</p>
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <p>Password</p>
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <p></p>
+        <input type="submit" value="Log In" />
+      </form>
+          
       </div>
+      
     );
   }
 }
