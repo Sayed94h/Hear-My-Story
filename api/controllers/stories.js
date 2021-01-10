@@ -17,7 +17,6 @@ module.exports.createStory =  async (req, res, next) => {
         }
         if(user) {
             story.author = user._id;
-            console.log(story);
             story.save();
 
             return res.status(200).json({
