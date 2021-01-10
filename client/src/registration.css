@@ -5,24 +5,32 @@ h1.title {
     text-align: center;
     text-transform: capitalize;
 }
-div.soustitle p {
-    text-align: center;
-    font-weight: bold;
+
+main.Registration {
+    display: flex;
+    justify-content: center;
 }
-.signupbutton button {
-    min-width: 32%;
-    cursor: pointer;
-    margin-left: 450px;
-    margin-top: 0.5em;
-    padding: 	1em;
-    border: none;
-    border-radius: 4px;
-    background-color: #1E3231;
-    color: #fefefe;
-  }
-  .emailsignup{
-    margin-left: 590px;
-  }
-  p{
-      text-align: center;
-  }
+
+main.Registration > div {
+    display: flex;
+    flex-direction: column;
+}
+
+main.Registration p {
+    text-align: center;
+}
+
+main.Registration p {
+    text-align: center;
+}
+
+main.Registration div.Registration-Subtitle {
+}
+
+main.Registration div.Registration-Signup {
+    margin: 2em 0;
+}
+
+a {
+    color: var(--orange);
+}

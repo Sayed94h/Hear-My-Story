@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 
-
 import './registration.css';
+import LinkButton from "./LinkButton";
 
-
-
-export default class registration extends Component {
+export default class Registration extends Component {
 
   constructor(props) {
     super(props);
@@ -15,42 +13,28 @@ export default class registration extends Component {
     }
   }
 
-  //function to set state if a form field is changed
-  handleChange = (e, state) => {
-    this.setState({
-      [state]: e.target.value
-    });
-  }
-
   render() {
     return (
-      <div>
-        <h1 className="title">Join Hear My Story</h1>
-        <div className="soustitle">
-          <p>Create a profile to share your Story.<br></br> Share your story so others can hear it.</p>
-        </div>
-        <login />
-
-
-
-
-
-
-
-
-        <div className="signupbutton">
-          <button> Sign Up with Google</button>
-          <p></p>
-          <button> Sign Up with Facebook</button>
-        </div>
-        <p></p>
+      <main className="Registration">
         <div>
-          <Link className="emailsignup" to ="/signup">Sign up with an email</Link>
+          <h1 className="title">Join Hear My Story</h1>
+
+          <div className="Registration-Subtitle">
+            <p>
+              Create a profile to share your Story.<br />
+              Share your story so others can hear it.
+            </p>
+          </div>
+
+          <div className="Registration-Signup">
+            <p>
+              <LinkButton to="/signup">Sign up with an email</LinkButton>
+            </p>
+          </div>
+
+          <p>Already have an account? <Link to="/signin">Sign In</Link></p>
         </div>
-        
-        <p></p>
-        <p>Already have an account? <Link to="/signin">Sign In</Link></p>
-      </div>
+      </main>
     );
   }
 }

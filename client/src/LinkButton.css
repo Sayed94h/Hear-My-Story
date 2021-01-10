@@ -1,0 +1,11 @@
+.LinkButton {
+    min-width: 32%;
+    cursor: pointer;
+    margin-top: 0.5em;
+    padding: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #1E3231;
+    color: #fefefe;
+    text-decoration: none;
+}
