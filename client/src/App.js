@@ -4,6 +4,8 @@ import withAuth from './withAuth';
 import Home from './Home';
 import Secret from './Secret';
 import Header from "./Header";
+import Stories from './Stories';
+
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/secret" component={withAuth(Secret)} />
+          <Route path="/stories" component={Stories} />
         </Switch>
       </div>
     );

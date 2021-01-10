@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Navigation.css';
 
 export default class Navigation extends Component {
@@ -7,7 +7,7 @@ export default class Navigation extends Component {
     return (
       <nav className="Navigation">
         <ul>
-          <li><Link to="/">Stories</Link></li>
+          <li><Link to="/stories">Stories</Link></li>
           <li><Link to="/registration">My Profile</Link></li>
           <li><Link to="/">About</Link></li>
         </ul>
