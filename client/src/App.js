@@ -22,8 +22,6 @@ class App extends Component {
           <Route path="/registration" component={Registration} />
           <Route exact path='/signin' render={(history) => <UserSignIn history={history} />} />
           <Route exact path='/signup' render={(history) => <UserSignUp history={history} />} />
-          
-          
         </Switch>
       </div>
     );

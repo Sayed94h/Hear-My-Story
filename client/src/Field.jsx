@@ -7,6 +7,7 @@ export default class Field extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      [props.inputName]: ''
     };
   }
 
@@ -23,8 +24,14 @@ export default class Field extends Component {
     return (
       <div className="Field">
         <label htmlFor={this.props.inputName}>{this.props.label}</label> <br/>
-        <input id={this.props.inputName} name={this.props.inputName} type={this.props.type} className="" placeholder={this.props.placeholder}
-               value={this.state[this.props.inputName]} onChange={(e) => this.handleChange(e, this.props.inputName)} />
+        <input
+          id={this.props.inputName}
+          name={this.props.inputName}
+          type={this.props.type}
+          placeholder={this.props.placeholder}
+          value={this.state[this.props.inputName]}
+          onChange={(e) => this.handleChange(e, this.props.inputName)}
+        />
       </div>
     );
   }

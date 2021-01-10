@@ -1,10 +1,50 @@
 import React, { Component } from 'react';
 import './UserSignUp.css';
 import Field from "./Field";
+import { Redirect } from "react-router-dom";
 
 export default class UserSignUp extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirectToProfile: false,
+      error: false
+    };
+  }
+
   handleSubmit = (event) => {
+    event.preventDefault();
+
+    const root = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
+
+    fetch(
+      `${root}/api/register`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: this.state?.email,
+          name: this.state?.name,
+          password: this.state?.password
+        })
+      }
+    )
+    .then(response => response.json())
+    .then((data) => {
+      if (data.success === true) {
+        this.setState({
+          redirectToProfile: true
+        });
+      }
+    })
+      .catch((error) => {
+        this.setState({
+          error: true
+        })
+      })
   }
 
   //function to update state when a form field is changed
@@ -15,6 +55,10 @@ export default class UserSignUp extends Component {
   }
 
   render() {
+    if (this.state.redirectToProfile === true) {
+      return <Redirect to={"/profile"} />
+    }
+
     return (
       <main className="UserSignUp">
         <div>
@@ -49,7 +93,6 @@ export default class UserSignUp extends Component {
                 label={"Password"}
                 onChange={this.handleChange}
               />
-
               <button className="Button">Sign Up</button>
             </form>
           </div>
