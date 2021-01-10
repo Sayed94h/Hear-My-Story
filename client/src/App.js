@@ -4,8 +4,10 @@ import withAuth from './withAuth';
 import Home from './Home';
 import Secret from './Secret';
 import Registration from './registration';
-import Usersignin from './UserSignIn';
-import Usersignup from './UserSignUp';
+import UserSignIn from './UserSignIn';
+import UserSignUp from './UserSignUp';
+
+import './App.css';
 
 import Header from "./Header";
 
@@ -18,8 +20,8 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/secret" component={withAuth(Secret)} />
           <Route path="/registration" component={Registration} />
-          <Route exact path='/signin' render={(history) => <Usersignin history={history} />} />
-          <Route exact path='/signup' render={(history) => <Usersignup history={history} />} />
+          <Route exact path='/signin' render={(history) => <UserSignIn history={history} />} />
+          <Route exact path='/signup' render={(history) => <UserSignUp history={history} />} />
           
           
         </Switch>

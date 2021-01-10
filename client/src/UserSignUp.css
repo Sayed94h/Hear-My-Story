@@ -1,51 +1,72 @@
-label {
-    margin-left: 800px;
-    color: #444;
-    font-weight: lighter;
-  }
+main.UserSignUp {
+    display: flex;
+    justify-content: center;
+}
 
-  input {
+main.UserSignUp > div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    margin-left: 800px;
-    width: 35%;
-  }
-  input, select {
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #d6d1d5;
-    margin-top: 5px;
-  }
+}
 
-  button {
-    min-width: 20%;
-    cursor: pointer;
-    margin-left: 950px;
-    margin-top: 0.5em;
-    padding: 	0.938em;
-    border: none;
-    border-radius: 4px;
-    background-color: #1E3231;
-    color: #fefefe;
-  }
-
-  .error {
-    color:#db2269;
-    font-size: 0.5em;
-    display: relative;
-  }
-
-  .submit {
-    width: 100%;
+main.UserSignUp > div > div {
     display: flex;
-    flex-wrap: wrap;
-  }
+}
 
-h1.title {
+main.UserSignUp > div > div > form {
+    flex: 1;
+    margin: 1em;
+}
+
+main.UserSignUp > div > div > div {
+    flex: 1;
+    min-height: 26em;
+    margin: 1em;
+}
+
+main.UserSignUp h1 {
     color: var(--orange);
     font-size: 3em;
     font-weight: bold;
     text-align: center;
     text-transform: capitalize;
+}
+
+main.UserSignUp .UserSignUp-Images {
+    position: relative;
+    height: 100%;
+}
+
+main.UserSignUp .UserSignUp-Images img {
+    position: absolute;
+}
+
+main.UserSignUp .UserSignUp-Images img {
+    max-width: 80%;
+    border-radius: 0.5em;
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(1) {
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(2) {
+    right: 0;
+    top: 30%;
+    z-index: 200;
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(3) {
+    bottom: 0;
+    z-index: 300;
+}
+
+main.UserSignUp  .error {
+    color:#db2269;
+    font-size: 0.5em;
+    display: relative;
+}
+
+main.UserSignUp  .submit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }

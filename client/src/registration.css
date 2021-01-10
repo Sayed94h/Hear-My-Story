@@ -1,4 +1,4 @@
-h1.title {
+main.UserSignIn h1 {
     color: var(--orange);
     font-size: 3em;
     font-weight: bold;
@@ -31,6 +31,6 @@ main.Registration div.Registration-Signup {
     margin: 2em 0;
 }
 
-a {
+main.UserSignIn a {
     color: var(--orange);
 }

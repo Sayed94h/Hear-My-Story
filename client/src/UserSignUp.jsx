@@ -1,59 +1,61 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import './UserSignUp.css';
+import Field from "./Field";
 
+export default class UserSignUp extends Component {
 
-export default function App() {
-  const [email, setEmail] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [password, setPassword] = React.useState("");
-
-  const handleSubmit = (event) => {
-    console.log(`
-      Email: ${email}
-      Name: ${name}
-      Password: ${password}
-    `);
-
-    event.preventDefault();
+  handleSubmit = (event) => {
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <h1 className="title">Get Started With Your account</h1>
+  //function to update state when a form field is changed
+  handleChange = (inputName, value) => {
+    this.setState({
+      [inputName]: value
+    });
+  }
 
-      <label>
-        Email
-        <input
-          name="email"
-          type="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          required />
-      </label>
+  render() {
+    return (
+      <main className="UserSignUp">
+        <div>
+          <h1 className="title">Get Started With Your account</h1>
+          <div>
+          <div className="UserSignUp-Images">
+            <img alt="Picture of a refugee scene" src={"/refugee1.jpg"}/>
+            <img alt="Picture of a refugee scene" src={"/refugee2.jpg"}/>
+            <img alt="Picture of a refugee scene" src={"/refugee3.jpg"}/>
+          </div>
+            <form onSubmit={this.handleSubmit}>
+              <Field
+                inputName={"email"}
+                type={"type"}
+                placholder={"Email Address"}
+                label={"Email Address"}
+                onChange={this.handleChange}
+              />
 
-      <label>
-        name
-        <input
-          name="name"
-          type="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          required />
-      </label>
+              <Field
+                inputName={"name"}
+                type={"type"}
+                placholder={"Name"}
+                label={"Name"}
+                onChange={this.handleChange}
+              />
 
-      <label>
-        Password
-        <input
-          name="password"
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required />
-      </label>
+              <Field
+                inputName={"password"}
+                type={"password"}
+                placholder={"password"}
+                label={"Password"}
+                onChange={this.handleChange}
+              />
 
-      <button>Sign Up</button>
-    </form>
+              <button className="Button">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
-  );
-} 
+}

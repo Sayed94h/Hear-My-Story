@@ -17,7 +17,7 @@ export default class Registration extends Component {
     return (
       <main className="Registration">
         <div>
-          <h1 className="title">Join Hear My Story</h1>
+          <h1>Join Hear My Story</h1>
 
           <div className="Registration-Subtitle">
             <p>
