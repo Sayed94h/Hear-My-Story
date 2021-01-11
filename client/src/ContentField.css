@@ -1,16 +1,17 @@
-div.Field {
+div.ContentField {
     margin-bottom: 0.5em;
 }
 
-div.Field input {
+div.ContentField textarea {
     padding: 0.2em;
     border: 1px solid #d6d1d5;
     font-size: 1.5em;
     background-color: var(--blue);
     width: 100%;
+    min-height: 14em;
 }
 
-div.Field label {
+div.ContentField label {
     font-size: 1.5em;
     font-weight: 600;
 }
