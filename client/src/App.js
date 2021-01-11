@@ -6,11 +6,12 @@ import Secret from './Secret';
 import Header from "./Header";
 import Stories from './Stories';
 
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />

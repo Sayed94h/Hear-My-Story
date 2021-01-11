@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    
-    
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .setting__button {
@@ -36,17 +36,36 @@
     text-align: center;
 }
 
-.story__leftButton {
+.story__navigation {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: auto;
-    position: fixed;
-    color: #1E3231;
-    top: 25%;
+    color: var(--black);
+    border-left: var(--black) 1px solid;
 }
+
+.story__navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.story__navigation ul li {
+    list-style-type: none;
+    padding: 1em;
+}
+
+.story__navigation ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.story__navigation ul li a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+
 .content__input {
     border: none;
     width: 50%;
