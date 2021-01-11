@@ -1,0 +1,66 @@
+main.UserSignUp {
+    display: flex;
+    justify-content: center;
+}
+
+main.UserSignUp > div {
+    display: flex;
+    flex-direction: column;
+}
+
+main.UserSignUp > div > div {
+    display: flex;
+}
+
+main.UserSignUp > div > div > form {
+    flex: 1;
+    margin: 1em;
+}
+
+main.UserSignUp > div > div > div {
+    flex: 1;
+    min-height: 26em;
+    margin: 1em;
+}
+
+main.UserSignUp h1 {
+    color: var(--orange);
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+main.UserSignUp .UserSignUp-Images {
+    position: relative;
+    height: 100%;
+}
+
+main.UserSignUp .UserSignUp-Images img {
+    position: absolute;
+}
+
+main.UserSignUp .UserSignUp-Images img {
+    max-width: 80%;
+    border-radius: 0.5em;
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(1) {
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(2) {
+    right: 0;
+    top: 30%;
+    z-index: 200;
+}
+
+main.UserSignUp .UserSignUp-Images img:nth-child(3) {
+    bottom: 0;
+    z-index: 300;
+}
+
+main.UserSignUp  .submit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
