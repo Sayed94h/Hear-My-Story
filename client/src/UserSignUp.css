@@ -59,10 +59,6 @@ main.UserSignUp .UserSignUp-Images img:nth-child(3) {
     z-index: 300;
 }
 
-main.UserSignUp  .error {
-    color: var(--danger);
-}
-
 main.UserSignUp  .submit {
     width: 100%;
     display: flex;

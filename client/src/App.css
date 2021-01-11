@@ -18,3 +18,7 @@ a {
 label {
     color: var(--black);
 }
+
+.error {
+    color: var(--danger);
+}
