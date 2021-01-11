@@ -20,7 +20,7 @@ app.post('/register', function(req, res) {
     User.findOne({ email: newUser.email }, function(err, user) {
         if (user) return res.status(400).json({
             auth: false,
-            message: "email exits"
+            message: "A user with the email is already registered."
         });
 
         newUser.save((err, doc) => {

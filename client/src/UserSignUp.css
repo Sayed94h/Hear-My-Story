@@ -60,9 +60,7 @@ main.UserSignUp .UserSignUp-Images img:nth-child(3) {
 }
 
 main.UserSignUp  .error {
-    color:#db2269;
-    font-size: 0.5em;
-    display: relative;
+    color: var(--danger);
 }
 
 main.UserSignUp  .submit {

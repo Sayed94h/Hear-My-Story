@@ -4,6 +4,10 @@ import './Field.css';
 
 export default class Field extends Component {
 
+  defaultProps = {
+    required: false
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +29,7 @@ export default class Field extends Component {
       <div className="Field">
         <label htmlFor={this.props.inputName}>{this.props.label}</label> <br/>
         <input
+          required={this.props.required}
           id={this.props.inputName}
           name={this.props.inputName}
           type={this.props.type}

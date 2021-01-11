@@ -38,6 +38,10 @@ export default class UserSignUp extends Component {
         this.setState({
           redirectToProfile: true
         });
+      } else if (data.message) {
+        this.setState({
+          error: data.message
+        })
       }
     })
       .catch((error) => {
@@ -71,6 +75,7 @@ export default class UserSignUp extends Component {
           </div>
             <form onSubmit={this.handleSubmit}>
               <Field
+                required={true}
                 inputName={"email"}
                 type={"type"}
                 placholder={"Email Address"}
@@ -79,6 +84,7 @@ export default class UserSignUp extends Component {
               />
 
               <Field
+                required={true}
                 inputName={"name"}
                 type={"type"}
                 placholder={"Name"}
@@ -87,13 +93,17 @@ export default class UserSignUp extends Component {
               />
 
               <Field
+                required={true}
                 inputName={"password"}
                 type={"password"}
                 placholder={"password"}
                 label={"Password"}
                 onChange={this.handleChange}
               />
+
               <button className="Button">Sign Up</button>
+
+              {this.state.error ? <p className="error">{this.state.error}</p> : null}
             </form>
           </div>
         </div>
