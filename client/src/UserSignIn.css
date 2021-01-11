@@ -1,0 +1,25 @@
+main.UserSignIn {
+    display: flex;
+    justify-content: center;
+}
+
+main.UserSignIn > div {
+    display: flex;
+    flex-direction: column;
+}
+
+main.UserSignIn h1 {
+    color: var(--orange);
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+main.UserSignIn p {
+    text-align: center;
+}
+
+main.UserSignIn form {
+    font-weight: lighter;
+}
