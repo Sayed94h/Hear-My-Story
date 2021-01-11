@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import React from "react";
 
 import './ProfileNavigation.css';
@@ -7,16 +7,16 @@ const ProfileNavigation = () => {
   return <nav className="ProfileNavigation">
     <ul>
       <li>
-        <Link to={"/profile"}>Create Story</Link>
+        <NavLink exact={true} to={"/profile"}>Create Story</NavLink>
       </li>
       <li>
-        <Link to={"/profile/stories"}>Show Stories</Link>
+        <NavLink exact={true} to={"/profile/stories"}>Show Stories</NavLink>
       </li>
       {/*<li>*/}
       {/*  <Link to={'/'}>Saved Stories</Link>*/}
       {/*</li>*/}
       <li>
-        <Link to={"/profile/stories/reactions"}>Reactions</Link>
+        <NavLink to={"/profile/stories/reactions"}>Reactions</NavLink>
       </li>
     </ul>
   </nav>;

@@ -8,6 +8,10 @@
     flex: 1;
 }
 
+.App a.active {
+    text-decoration: underline!important;
+}
+
 .Button {
     cursor: pointer;
     padding: 0.5em;
