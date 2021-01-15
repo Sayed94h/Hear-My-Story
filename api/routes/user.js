@@ -28,10 +28,10 @@ const deleteUser = (req, res) => {
 }
 
 router.put(
-    'users/:id/update',
+    '/users/:id/update',
     updateUser
 )
 
-router.delete('users/:id', deleteUser);
+router.delete('/users/:id', deleteUser);
 
 module.exports = router;
