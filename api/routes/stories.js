@@ -5,6 +5,8 @@ const { auth } = require('../middleware');
 
 
 router.post('/', auth, storiesController.createStory);
+router.get('/', storiesController.showStories);
+router.get('/:id', storiesController.showStory);
 
 
 
