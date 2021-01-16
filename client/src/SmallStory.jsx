@@ -3,13 +3,15 @@ import "./SmallStory.css";
 import { Link } from "react-router-dom";
 export default class SmallStory extends Component {
 	render() {
+		const { author, created, story, title } = this.props;
+
 		return (
-			<section className="small-story">
+			<article className="SmallStory">
 				<section className="content">
-					<h1>"The Center causes stress and frustration"</h1>
+					<h1>{title}</h1>
 					<section>
-						<p>Yared</p>
-						<p>20-12-2020</p>
+						<p>{author.name}</p>
+						<p>{(new Date(created)).toLocaleDateString()}</p>
 					</section>
 				</section>
 				<section className="reactions-link">
@@ -18,7 +20,7 @@ export default class SmallStory extends Component {
 					</figure>
 					<Link to="/">Read more</Link>
 				</section>
-			</section>
+			</article>
 		);
 	}
 }

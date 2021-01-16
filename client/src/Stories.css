@@ -1,0 +1,36 @@
+main.Stories {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+    grid-gap: 1em;
+    grid-auto-rows: minmax(5em, auto);
+    grid-auto-flow: dense;
+    padding: 1em;
+    align-items: stretch;
+}
+
+main.Stories article {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+main.Stories article.SmallStory {
+    grid-column-end: span 2;
+    grid-row-end: span 1;
+    width: auto !important;
+    height: auto !important;
+}
+
+main.Stories article.Story {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+    width: auto !important;
+    height: auto !important;
+}
+
+main.Stories article.BigStory {
+    grid-column-end: span 3;
+    grid-row-end: span 4;
+    width: auto !important;
+    height: auto !important;
+}

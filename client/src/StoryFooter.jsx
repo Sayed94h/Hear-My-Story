@@ -6,7 +6,7 @@ export default class StoryFooter extends Component {
   render() {
     return (
       <footer className="StoryFooter">
-        <Link to="/">Hear more</Link>
+        <Link to="/">Read more</Link>
         <div className="StoryFooter-Reactions">
           <p>
             6

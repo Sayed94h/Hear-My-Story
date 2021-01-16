@@ -1,8 +1,8 @@
-article.Story {
+article.BigStory {
     background-color: var(--blue);
     padding: 0.5em 1em;
-    width: 16em;
-    min-height: 14em;
+    width: 32em;
+    min-height: 28em;
     display: flex;
     flex-direction: column;
 }

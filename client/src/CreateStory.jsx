@@ -3,19 +3,48 @@ import './CreateStory.css';
 import Field from "./Field";
 import ContentField from "./ContentField";
 import ProfileNavigation from "./ProfileNavigation";
+import { Redirect } from "react-router-dom";
 
 function CreateStory() {
   const [title, setTitle] = useState('');
   const [story, setStory] = useState('');
+  const [redirectToMyStories, setRedirectToMyStories] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleStory = async () => {
 
-    try {
-      console.log(title, story)
-    } catch (err) {
-      console.error(err);
-    }
+    fetch(
+      `/api/stories`,
+      {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          story,
+        })
+      }
+    )
+      .then(response => response.json())
+      .then((data) => {
+        if (!data.error) {
+          setRedirectToMyStories(true);
+        }
+
+        if (data.error === true) {
+          setError('Something went wrong')
+        }
+      })
+      .catch((error) => {
+        setError(error);
+      });
   };
+
+  if (redirectToMyStories === true) {
+    return <Redirect to={'/profile/stories'} />
+  }
 
   return (
     <main className="story__header">
@@ -50,6 +79,8 @@ function CreateStory() {
           />
 
           <button className="Button" type="submit">Save Story</button>
+
+          {error ? <p className="error">{error}</p> : null}
         </form>
       </div>
     </main>

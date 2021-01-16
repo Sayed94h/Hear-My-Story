@@ -1,8 +1,17 @@
 main.StoryBody {
-
+    flex: 1;
 }
 
 main.StoryBody h1 {
     font-size: 2em;
     margin: 0.5em 0;
+}
+
+.BigStory main.StoryBody h1 {
+    font-size: 4em;
+    margin: 0.5em 0;
+}
+
+.BigStory main.StoryBody p {
+    font-size: 1.5em;
 }

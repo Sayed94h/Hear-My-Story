@@ -3,11 +3,12 @@ import './StoryBody.css';
 
 export default class StoryBody extends Component {
   render() {
+    const { title, story } = this.props;
     return (
       <main className="StoryBody">
-        <h1>The sounds at the center</h1>
+        <h1>{title}</h1>
         <p>
-          The center is a noisy place is causes stress and frustration ...
+          {story}
         </p>
       </main>
     );

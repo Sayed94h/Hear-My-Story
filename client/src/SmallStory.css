@@ -1,33 +1,38 @@
-section.small-story {
+article.SmallStory {
 	background-color: var(--blue);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-self: flex-end;
 }
-section.content {
+
+article.SmallStory section.content {
 	display: flex;
 	flex-direction: column;
 }
-section.content section {
+
+article.SmallStory section.content section {
 	display: flex;
 	flex-direction: row;
 }
-section.content h1 {
+
+article.SmallStory section.content h1 {
 	margin: 0;
 	padding: 5px 0 0 9px;
 }
 
-section.reactions-link a {
+article.SmallStory section.reactions-link a {
 	color: var(--black);
 	margin: 0;
 	padding: 0;
 }
-section.content section p {
+
+article.SmallStory section.content section p {
 	padding-left: 9px;
 	margin-right: 0;
 }
-section.reactions-link {
+
+article.SmallStory section.reactions-link {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -35,11 +40,13 @@ section.reactions-link {
 	align-items: center;
 	margin: 0 5px 5px 0;
 }
-section.reactions-link figure {
+
+article.SmallStory section.reactions-link figure {
 	margin: 0;
 	padding: 0;
 }
-section.reactions-link figure img {
+
+article.SmallStory section.reactions-link figure img {
 	width: 1.6em;
 	height: 1.6em;
 	object-fit: contain;

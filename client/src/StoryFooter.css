@@ -1,6 +1,7 @@
 footer.StoryFooter {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 footer.StoryFooter p {
@@ -32,3 +33,6 @@ footer.StoryFooter .StoryFooter-Reactions figure img {
     object-fit: contain;
 }
 
+.BigStory .StoryFooter a, .BigStory .StoryFooter p {
+    font-size: 1.5em;
+}

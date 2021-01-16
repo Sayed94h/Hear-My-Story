@@ -3,11 +3,11 @@ const User = require('../models/User')
 
 // create a story
 module.exports.createStory =  async (req, res, next) => {
-    
     if(!req.body.title || !req.body.story) return res.status(400).json({
         error: true,
         message: "title or story not provided"
     });
+
     const story = new Story(req.body);
     let token = req.cookies.auth;
     
@@ -23,10 +23,7 @@ module.exports.createStory =  async (req, res, next) => {
                 story  
               });
         }
-    })
-    
-   
-    
+    });
 }
 
 // show all stories
@@ -47,7 +44,6 @@ module.exports.showStory = async (req, res, next) => {
             message: `id not found`
         });
     }
-    
 }
 
     

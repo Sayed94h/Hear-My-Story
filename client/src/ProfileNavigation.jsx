@@ -10,7 +10,7 @@ const ProfileNavigation = () => {
         <NavLink exact={true} to={"/profile"}>Create Story</NavLink>
       </li>
       <li>
-        <NavLink exact={true} to={"/profile/stories"}>Show Stories</NavLink>
+        <NavLink exact={true} to={"/profile/stories"}>My Stories</NavLink>
       </li>
       {/*<li>*/}
       {/*  <Link to={'/'}>Saved Stories</Link>*/}

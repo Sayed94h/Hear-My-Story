@@ -6,3 +6,7 @@ header.StoryHeader {
 header.StoryHeader p {
     margin: 0;
 }
+
+.BigStory header.StoryHeader p {
+    font-size: 1.5em;
+}
