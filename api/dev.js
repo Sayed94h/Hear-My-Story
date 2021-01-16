@@ -10,7 +10,7 @@ devServer.use((req, res, next) => {
   next();
 });
 
-devServer.use('/api', cors({ origin: true }), api);
+devServer.use('/api', cors({ origin: true, credentials: true }), api);
 
 devServer.get('/', (req, res) => {
   res.send('frontend');

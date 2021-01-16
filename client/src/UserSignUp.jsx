@@ -16,12 +16,11 @@ export default class UserSignUp extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const root = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
-
     fetch(
-      `${root}/api/register`,
+      `/api/register`,
       {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

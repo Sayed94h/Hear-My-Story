@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import withAuth from './withAuth';
+import toProfile from './toProfile';
 import Home from './Home';
-import Secret from './Secret';
 import Registration from './registration';
 import UserSignIn from './UserSignIn';
 import UserSignUp from './UserSignUp';
@@ -21,14 +21,14 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
           <Route path="/stories" component={Stories} />
-          <Route path="/secret" component={withAuth(Secret)} />
-          <Route path="/profile/stories" component={MyStories} />
-          <Route path="/profile" component={CreateStory} />
-          <Route path="/profile" component={CreateStory} />
-          <Route path="/registration" component={Registration} />
-          <Route exact path='/signin' render={(history) => <UserSignIn history={history} />} />
-          <Route exact path='/signup' render={(history) => <UserSignUp history={history} />} />
+          <Route path="/profile/stories" component={withAuth(MyStories)} />
+          <Route path="/profile" component={withAuth(CreateStory)} />
+          <Route path="/profile" component={withAuth(CreateStory)} />
+          <Route path="/registration" component={toProfile(Registration)} />
+          <Route exact path='/signin' component={toProfile(UserSignIn)} />
+          <Route exact path='/signup' component={toProfile(UserSignUp)} />
         </Switch>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-export default function withAuth(ComponentToProtect) {
+export default function withAuth(ComponentToFallback) {
   return class extends Component {
     constructor() {
       super();
@@ -17,7 +17,7 @@ export default function withAuth(ComponentToProtect) {
       })
         .then(res => {
           if (res.status === 200) {
-            this.setState({ loading: false });
+            this.setState({ loading: false, redirect: true });
           } else {
             const error = new Error(res.error);
             throw error;
@@ -25,7 +25,7 @@ export default function withAuth(ComponentToProtect) {
         })
         .catch(err => {
           console.error(err);
-          this.setState({ loading: false, redirect: true });
+          this.setState({ loading: false });
         });
     }
 
@@ -36,9 +36,9 @@ export default function withAuth(ComponentToProtect) {
         return null;
       }
       if (redirect) {
-        return <Redirect to="/signin" />;
+        return <Redirect to="/profile" />;
       }
-      return <ComponentToProtect {...this.props} />;
+      return <ComponentToFallback {...this.props} />;
     }
   }
 }
