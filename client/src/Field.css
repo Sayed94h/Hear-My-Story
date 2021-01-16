@@ -1,0 +1,16 @@
+div.Field {
+    margin-bottom: 0.5em;
+}
+
+div.Field input {
+    padding: 0.2em;
+    border: 1px solid #d6d1d5;
+    font-size: 1.5em;
+    background-color: var(--blue);
+    min-width: 14em;
+}
+
+div.Field label {
+    font-size: 1.5em;
+    font-weight: 600;
+}

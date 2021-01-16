@@ -3,13 +3,14 @@
 const express = require('express');
 const devServer = express();
 const api = require('./server.js');
+const cors = require("cors");
 
 devServer.use((req, res, next) => {
   console.log(req.method + ': ' + req.path);
   next();
 });
 
-devServer.use('/api', api);
+devServer.use('/api', cors({ origin: true }), api);
 
 devServer.get('/', (req, res) => {
   res.send('frontend');
