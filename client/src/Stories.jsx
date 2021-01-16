@@ -26,7 +26,6 @@ export default function() {
     .catch((error) => {
       setError('Something went wrong while fetching the stories');
     });
-
   }, []);
 
   const bigStories = [0, 8, 15, 21];

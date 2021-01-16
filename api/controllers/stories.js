@@ -26,6 +26,18 @@ module.exports.createStory =  async (req, res, next) => {
     });
 }
 
+// show stories of logged in user
+module.exports.showMyStories = async (req, res) => {
+    const stories = await Story
+      .find({
+          author: {
+              _id: req.user._id
+          }
+      })
+      .populate('author', 'name');
+    res.send(stories);
+}
+
 // show all stories
 module.exports.showStories = async (req, res) => {
     const stories = await Story.find({}).populate('author', 'name');
