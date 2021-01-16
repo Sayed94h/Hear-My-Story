@@ -47,9 +47,9 @@ userSchema.pre('save', function(next) {
 });
 
 //to login
-userSchema.methods.comparepassword = function(password, cb) {
-    bcrypt.compare(password, this.password, function(err, isMatch) {
-        if (err) return cb(next);
+userSchema.methods.compare = function(password, cb) {
+    bcrypt.compare(password, this.password, function(err, isMatch, next) {
+        if (err) return cb(null);
         cb(null, isMatch);
     });
 }
@@ -58,7 +58,7 @@ userSchema.methods.comparepassword = function(password, cb) {
 
 userSchema.methods.generateToken = function(cb) {
     var user = this;
-    var token = jwt.sign(user._id.toHexString(), config.SECRET);
+    var token = jwt.sign(user._id.toHexString(), process.env.SECRET);
 
     user.token = token;
     user.save(function(err, user) {
@@ -90,5 +90,4 @@ userSchema.methods.deleteToken = function(token, cb) {
     })
 }
 
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.models.User || mongoose.model('User', userSchema);
