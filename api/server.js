@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/home.js'));
 app.use('/', require('./routes/login.js'));
+app.use('/', require('./routes/user.js'));
 app.use('/stories', storiesRoutes)
 
 module.exports = app;

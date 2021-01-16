@@ -1,18 +1,12 @@
 const express = require('express');
-const bodyparser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const User = require('../models/User');
+const User = require('../models/user');
 const { auth } = require('../middleware');
-const path = require('path');
-
 
 const app = express();
-// app use
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
-app.use(cookieParser());
 
-app.use('/', express.static(path.join(__dirname, 'static')));
+app.get('/', function(req, res) {
+    res.status(200).send(`Welcome to Hear My Story App`);
+});
 
 // adding new user (sign-up route)
 app.post('/register', function(req, res) {
@@ -93,11 +87,6 @@ app.get('/profile', auth, function(req, res) {
         name: req.user.name
 
     })
-});
-
-
-app.get('/', function(req, res) {
-    res.status(200).send(`Welcome to Hear My Story App`);
 });
 
 module.exports = app;
