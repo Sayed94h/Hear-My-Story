@@ -1,9 +1,19 @@
-const { User } = require('../models/User');
+const User = require('../models/User');
 const express = require('express');
-const router = express.Router();
+const { auth } = require('../middleware');
+
+const app = express();
 
 const updateUser = (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
+
+    if (req.user._id != id) {
+        return res.status(401).json({
+            error: true,
+            msg: 'Operation not permitted'
+        });
+    }
+
     User
         .findOneAndUpdate(
             { '_id': id }, 
@@ -11,27 +21,40 @@ const updateUser = (req, res) => {
             { new: true, rawResult: true },
         )
         .then(result => {
-            res.status(200).send(result)
+            const user = {
+                _id: result.value._id,
+                email: result.value.email,
+                name: result.value.name
+            };
+            return res.status(200).send(user)
         })
-        .catch(error => res.status(400).json({ error }))
+        .catch(error =>  {
+            return res.status(400).json({ error })
+        })
 }
 
 const deleteUser = (req, res) => {
     const { id } = req.params;
+
+    if (req.user._id != id) {
+        return res.status(401).json({
+            error: true,
+            msg: 'Operation not permitted'
+        });
+    }
+
     User
         .deleteOne({ _id: id })
         .then(result => {
-            res.send(result)
+            return res.status(200);
         })
-        .catch(err => res.status(400).send(err))
+        .catch(err => {
+            return res.status(400).send(err)
+        })
     ;
 }
 
-router.put(
-    '/users/:id/update',
-    updateUser
-)
+app.put('/users/:id/update', auth, updateUser);
+app.delete('/users/:id', auth, deleteUser);
 
-router.delete('/users/:id', deleteUser);
-
-module.exports = router;
+module.exports = app;

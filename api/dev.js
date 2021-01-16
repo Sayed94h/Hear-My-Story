@@ -15,6 +15,5 @@ devServer.get('/', (req, res) => {
   res.send('frontend');
 });
 
-
 const port = 5000;
 devServer.listen(port, () => console.log(`listening at http://localhost:${port}`));

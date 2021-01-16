@@ -49,7 +49,7 @@ userSchema.pre('save', function(next) {
 //to login
 userSchema.methods.comparepassword = function(password, cb) {
     bcrypt.compare(password, this.password, function(err, isMatch) {
-        if (err) return cb(next);
+        if (err) return cb();
         cb(null, isMatch);
     });
 }
@@ -90,5 +90,4 @@ userSchema.methods.deleteToken = function(token, cb) {
     })
 }
 
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.models.User || mongoose.model('User', userSchema);
