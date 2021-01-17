@@ -38,6 +38,7 @@ function MyStories() {
             return <Story key={story._id} {...story}/>
           })
         }
+        {error ? <p className="error">{error}</p> : null}
       </div>
     </main>
   )

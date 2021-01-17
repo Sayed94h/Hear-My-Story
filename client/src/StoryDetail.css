@@ -1,0 +1,17 @@
+article.StoryDetail {
+    background-color: var(--blue);
+    padding-left: 2em;
+    width: 80%;
+    min-height: 100vh;
+    margin-left: 1em;
+}
+
+article.StoryDetail h1 {
+    font-size: 2em;
+}
+
+article.StoryDetail .StoryDetail-Author p {
+    margin: 0;
+    color: var(--grey);
+    font-weight: bold;
+}

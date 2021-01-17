@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 import withAuth from './withAuth';
 import toProfile from './toProfile';
 import Home from './Home';
@@ -13,6 +13,7 @@ import Header from "./Header";
 import CreateStory from './CreateStory';
 import MyStories from './MyStories';
 import Stories from "./Stories";
+import StoryDetail from "./StoryDetail";
 
 class App extends Component {
   render() {
@@ -22,7 +23,8 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />
-          <Route path="/stories" component={Stories} />
+          <Route path="/stories" exact component={Stories} />
+          <Route path="/stories/:id" exact component={StoryDetail} />
           <Route path="/profile/stories" component={withAuth(MyStories)} />
           <Route path="/profile" component={withAuth(CreateStory)} />
           <Route path="/profile" component={withAuth(CreateStory)} />

@@ -21,7 +21,7 @@ export default function() {
     )
     .then(response => response.json())
     .then((data) => {
-      setStories(data)
+      setStories(data);
     })
     .catch((error) => {
       setError('Something went wrong while fetching the stories');
