@@ -70,6 +70,23 @@ app.post('/login', function(req, res) {
     });
 });
 
+
+app.get('/checkToken', function(req, res) {
+    let token = req.cookies.auth;
+    User.findByToken(token, (err, user) => {
+        if (err) {
+            console.error(err);
+            return res.status(401).send();
+        }
+
+        if (user) {
+            return res.status(200).send();
+        }
+
+        return res.status(401).send();
+    });
+});
+
 //logout user
 app.get('/logout', auth, function(req, res) {
     req.user.deleteToken(req.token, (err, user) => {

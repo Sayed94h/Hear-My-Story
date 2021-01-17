@@ -24,11 +24,11 @@ export default class UserSignIn extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const root = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : '';
     fetch(
-      `${root}/api/login`,
+      `/api/login`,
       {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -40,7 +40,7 @@ export default class UserSignIn extends Component {
     )
       .then(response => response.json())
       .then((data) => {
-        if (data.success === true) {
+        if (data.isAuth === true) {
           this.setState({
             redirectToProfile: true
           })

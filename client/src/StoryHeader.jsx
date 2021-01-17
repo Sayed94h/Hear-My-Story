@@ -3,13 +3,14 @@ import './StoryHeader.css';
 
 export default class StoryHeader extends Component {
   render() {
+    const { author, created } = this.props;
     return (
       <header className="StoryHeader">
         <p>
-          Yared
+          {author.name}
         </p>
         <p>
-          20-12-2020
+          {(new Date(created)).toLocaleDateString()}
         </p>
       </header>
     );

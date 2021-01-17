@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 import withAuth from './withAuth';
+import toProfile from './toProfile';
 import Home from './Home';
-import Secret from './Secret';
 import Registration from './registration';
 import UserSignIn from './UserSignIn';
 import UserSignUp from './UserSignUp';
@@ -10,18 +10,27 @@ import UserSignUp from './UserSignUp';
 import './App.css';
 
 import Header from "./Header";
+import CreateStory from './CreateStory';
+import MyStories from './MyStories';
+import Stories from "./Stories";
+import StoryDetail from "./StoryDetail";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/secret" component={withAuth(Secret)} />
-          <Route path="/registration" component={Registration} />
-          <Route exact path='/signin' render={(history) => <UserSignIn history={history} />} />
-          <Route exact path='/signup' render={(history) => <UserSignUp history={history} />} />
+          <Route path="/home" exact component={Home} />
+          <Route path="/stories" exact component={Stories} />
+          <Route path="/stories/:id" exact component={StoryDetail} />
+          <Route path="/profile/stories" component={withAuth(MyStories)} />
+          <Route path="/profile" component={withAuth(CreateStory)} />
+          <Route path="/profile" component={withAuth(CreateStory)} />
+          <Route path="/registration" component={toProfile(Registration)} />
+          <Route exact path='/signin' component={toProfile(UserSignIn)} />
+          <Route exact path='/signup' component={toProfile(UserSignUp)} />
         </Switch>
       </div>
     );

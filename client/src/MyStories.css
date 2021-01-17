@@ -1,0 +1,13 @@
+main.MyStories {
+    display: flex;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+main.MyStories article {
+    margin-bottom: 1em;
+}
+
+main.MyStories .MyStories-Content {
+    flex: 1;
+}

@@ -1,0 +1,29 @@
+.ProfileNavigation {
+    display: flex;
+    flex-direction: column;
+    color: var(--black);
+    border-left: var(--black) 1px solid;
+}
+
+.ProfileNavigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ProfileNavigation ul li {
+    list-style-type: none;
+    padding: 1em;
+}
+
+.ProfileNavigation ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.ProfileNavigation ul li a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
