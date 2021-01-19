@@ -14,6 +14,7 @@ import CreateStory from './CreateStory';
 import MyStories from './MyStories';
 import Stories from "./Stories";
 import StoryDetail from "./StoryDetail";
+import About from "./About";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/registration" component={toProfile(Registration)} />
           <Route exact path='/signin' component={toProfile(UserSignIn)} />
           <Route exact path='/signup' component={toProfile(UserSignUp)} />
+          <Route path="/about" exact component={About} />
         </Switch>
       </div>
     );

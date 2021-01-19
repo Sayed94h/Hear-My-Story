@@ -1,5 +1,8 @@
 main.Home {
     padding: 1em;
+}
+
+main.Home .Home-Container {
     display: flex;
     justify-content: space-between;
 }
@@ -10,4 +13,9 @@ main.Home .EyeCatcher {
 
 main.Home .Gallery {
     flex: 3;
+}
+
+main.Home .Home-VideoContainer {
+    margin-top: 2em;
+    display: flex;
 }

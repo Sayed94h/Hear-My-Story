@@ -7,7 +7,7 @@ export default class StoryHeader extends Component {
     return (
       <header className="StoryHeader">
         <p>
-          {author.name}
+          {author?.name}
         </p>
         <p>
           {(new Date(created)).toLocaleDateString()}

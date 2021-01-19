@@ -1,0 +1,13 @@
+main.About {
+    padding: 1em;
+}
+
+main.About {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.About p, main.About li {
+    font-size: 1.5em;
+}

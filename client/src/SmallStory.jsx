@@ -19,7 +19,7 @@ export default function (props) {
 			<section className="content">
 				<h1>{title}</h1>
 				<section>
-					<p>{author.name}</p>
+					<p>{author?.name}</p>
 					<p>{(new Date(created)).toLocaleDateString()}</p>
 				</section>
 			</section>

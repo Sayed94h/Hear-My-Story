@@ -42,7 +42,7 @@ export default function() {
       <section className="content">
         <h1>{title}</h1>
         <section className="StoryDetail-Author">
-          <p>{author.name}</p>
+          <p>{author?.name}</p>
           <p>{(new Date(created)).toLocaleDateString()}</p>
         </section>
       </section>
